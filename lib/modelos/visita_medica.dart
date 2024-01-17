@@ -116,4 +116,22 @@ class VisitaMedica{
     return map;
   }
 
+  Future <List<Map<String, dynamic>>> consultarCita()
+  async {
+    var map = new Map<String, dynamic>();
+
+    await Future.delayed(Duration(seconds: 1));
+
+    map['id'] = 989;
+    map['especialidad'] = 'especialidad';
+    map['doctor'] = 'doctor';
+    map['lugar'] = 'lugar';
+    map['fecha'] = DateTime.now().toString();
+    
+
+    List<Map<String, dynamic>> lista = [map];
+
+    return lista;
+  }
+
 }

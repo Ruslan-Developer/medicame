@@ -31,6 +31,7 @@ class BotonListaVisita extends StatelessWidget {
       },
       child: Stack(
         children: [
+          //Aqui se hace un extract Widget del container para que no se repita el codigo
           _BotonFondo(icono: this.icono,color1: this.color1,color2: this.color2,colorTexto: this.colorTexto,),
           Row(
             children: [
@@ -79,7 +80,7 @@ class BotonListaVisita extends StatelessWidget {
                   ],
                 ),
               ),
-              FaIcon(FontAwesomeIcons.chevronRight, size: 40, color: colorTexto,),
+              FaIcon(FontAwesomeIcons.chevronRight, size: 40, color: colorTexto,), 
               const SizedBox(
                 width: 40,
               ),

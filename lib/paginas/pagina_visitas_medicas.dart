@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:medicame/modelos/base_datos.dart';
+import 'package:medicame/modelos/visita_medica.dart';
 import 'package:medicame/paginas/pagina_visita_medica.dart';
 import 'package:medicame/widgets/boton_lista_visita.dart';
 import 'package:medicame/widgets/header.dart';
@@ -23,6 +24,8 @@ class PaginaVisitasMedicas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final BDHelper bdHelper = BDHelper();
+    final VisitaMedica visitaMedica = VisitaMedica();
+    
   
     return Scaffold(
       body: Stack(
@@ -30,8 +33,9 @@ class PaginaVisitasMedicas extends StatelessWidget {
           
           Container(
             margin: EdgeInsets.only(top: 220),
-            child: FutureBuilder(
-              future: bdHelper.consultarBD('VisitaMedica'),
+            child: FutureBuilder( // Sirve para construir un widget en base a un future
+              //future: bdHelper.consultarBD('VisitaMedica'), 
+              future: visitaMedica.consultarCita(),
                builder: (context, AsyncSnapshot<List<Map<String, dynamic>>> snapshot) {
                 if(snapshot.hasData)
                 {
